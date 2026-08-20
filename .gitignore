@@ -1,0 +1,14 @@
+# Compilados e executáveis
+*.o
+*.exe
+*.out
+Gabarito-obj/prog
+
+# Documentos
+
+
+# Entradas e Saídas (Padrão de testes)
+entrada.txt
+saida.txt
+Casos/*/entrada.txt
+Casos/*/saida/
