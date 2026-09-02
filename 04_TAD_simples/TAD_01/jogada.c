@@ -1,33 +1,46 @@
 #include <stdio.h>
 #include "jogada.h"
 
+
+/*
+typedef struct{
+    int x;
+    int y;
+    int sucesso;
+} tJogada;
+*/
+
 tJogada LeJogada(){
-
     tJogada jogada;
-    jogada.sucesso = 0;
-
-    do {     
-        scanf("%d %d", &jogada.x, &jogada.y);
-
-    } while (scanf("%d %d", &jogada.x, &jogada.y) != 2);
-
-    jogada.sucesso = 1;
+    printf("Digite uma posicao (x e y):\n");
+    if(scanf("%d %d", &jogada.x, &jogada.y) == 2)
+        jogada.sucesso = 1;
     
+    else
+        jogada.sucesso = 0;
+
     return jogada;
 }
+
 
 
 int ObtemJogadaX(tJogada jogada){
     return jogada.x;
 }
 
+
+
 int ObtemJogadaY(tJogada jogada){
     return jogada.y;
 }
 
+
+
 int FoiJogadaBemSucedida(tJogada jogada){
+    
     if(jogada.sucesso == 1)
         return 1;
+    
     return 0;
-}
 
+}

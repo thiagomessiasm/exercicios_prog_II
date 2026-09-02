@@ -16,9 +16,7 @@ typedef struct{
  * 
  * @return o jogo criado.
  */
-tJogo CriaJogo(){
-    
-}
+tJogo CriaJogo();
 
 
 /**
