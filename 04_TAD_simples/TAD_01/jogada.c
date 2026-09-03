@@ -1,15 +1,6 @@
 #include <stdio.h>
 #include "jogada.h"
 
-
-/*
-typedef struct{
-    int x;
-    int y;
-    int sucesso;
-} tJogada;
-*/
-
 tJogada LeJogada(){
     tJogada jogada;
     printf("Digite uma posicao (x e y):\n");

@@ -4,11 +4,6 @@
 #include "jogada.h"
 
 
-/*
-typedef struct{
-    int id;
-} tJogador;
-*/
 
 /**
  * Cria um jogador com o id passado como parâmetro e retorna o jogador criado.
@@ -41,7 +36,7 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro){
     if(jogador.id == ID_JOGADOR_1)
         peca = tabuleiro.peca1;
 
-    else if(jogador.id = ID_JOGADOR_2)
+    else if(jogador.id == ID_JOGADOR_2)
         peca = tabuleiro.peca2;
 
     printf("Jogador %d\n", jogador.id);
@@ -49,7 +44,8 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro){
     tJogada jogada = LeJogada();
 
     
-    while(EstaLivrePosicaoTabuleiro(tabuleiro, jogada.x, jogada.y) == 0 || EhPosicaoValidaTabuleiro(jogada.x, jogada.y) == 0){
+    while(EhPosicaoValidaTabuleiro(jogada.x, jogada.y) == 0 ||
+          EstaLivrePosicaoTabuleiro(tabuleiro, jogada.x, jogada.y) == 0){
         
         if(EhPosicaoValidaTabuleiro(jogada.x, jogada.y) == 0)
             printf("Posicao invalida (FORA DO TABULEIRO - [%d,%d] )!\n",jogada.x, jogada.y);
@@ -104,7 +100,7 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro){
     for(int i = 0; i < TAM_TABULEIRO; i++){
 
         if(tabuleiro.posicoes[i][0] == peca && tabuleiro.posicoes[i][1] == peca 
-            && tabuleiro.posicoes == peca)
+            && tabuleiro.posicoes[i][2] == peca)
             return 1;
 
         else if (tabuleiro.posicoes[0][i] == peca && tabuleiro.posicoes[1][i] == peca 
