@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include "evento.h"
 
-
 void cadastrarEvento(Evento* eventos, int* numEventos){
 
     if((*numEventos) < MAX_EVENTOS){
+        
         Evento e;
-        scanf("%[^\n]\n", e.nome);
-        scanf("%d %d %d\n", &e.dia, &e.mes, &e.ano);
+        scanf(" %[^\n]", e.nome);
+        getchar();
+        scanf("%d %d %d", &e.dia, &e.mes, &e.ano);
 
-        eventos[*numEventos] = e;
+        eventos[(*numEventos)] = e;
+
         printf("Evento cadastrado com sucesso!\n");
         (*numEventos)++;
     }
@@ -24,22 +26,21 @@ void exibirEventos(Evento* eventos, int* numEventos){
         printf("Nenhum evento cadastrado.\n");
     
     else{
-
         printf("Eventos cadastrados:\n");
-        
-        for(int i = 1; i < (*numEventos); i++){
+
+        for(int i = 0; i < (*numEventos); i++){
+
             printf("%d - %s - %d/%d/%d\n", i, eventos[i].nome, eventos[i].dia, eventos[i].ano);
         }
     }
-
 }
 
 
-void trocarDataEvento(Evento* eventos, int* numEventos){
-    
-    int i;
+void trocarDataEvento(Evento* eventos, int* numEventos){   
 
-    scanf("%d", &i);
+    int i;
+    scanf(" %d", &i);
+    getchar();
     
     if(i < (*numEventos)){
     
@@ -59,20 +60,16 @@ void trocarDataEvento(Evento* eventos, int* numEventos){
 void trocarIndicesEventos(Evento* eventos, int* indiceA, int* indiceB, int* numEventos){
 
     if((*indiceA) >= (*numEventos) || (*indiceB) >= (*numEventos))
-        printf("Indices invalidos!");
+        printf("Indices invalidos!\n");
     
     else{
 
         Evento temp = eventos[*indiceB];
-
         eventos[*indiceB] = eventos[*indiceA];
-
         eventos[*indiceA] = temp;
-
-        printf("Eventos trocados com sucesso!");
-
+        printf("Eventos trocados com sucesso!\n");
+        
+    
     }
 
 }
-
-
