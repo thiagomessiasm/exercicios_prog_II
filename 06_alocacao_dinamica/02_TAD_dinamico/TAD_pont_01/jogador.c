@@ -58,15 +58,13 @@ void JogaJogador(tJogador* jogador, tTabuleiro* tabuleiro){
             continue;
         }
 
+        printf("Jogada [%d,%d]!\n", x, y);
+        MarcaPosicaoTabuleiro(tabuleiro, jogador->id, x, y);
+
         break;
 
     }
-    
 
-    x = ObtemJogadaX(jogada);
-    y = ObtemJogadaY(jogada);  
-    printf("Jogada [%d,%d]!\n", x, y);
-    MarcaPosicaoTabuleiro(tabuleiro, jogador->id, x, y);
     DestroiJogada(jogada);
 }
 
