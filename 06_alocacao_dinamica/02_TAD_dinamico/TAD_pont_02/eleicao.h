@@ -5,8 +5,8 @@
 #include "eleitor.h"
 
 
-// #define MAX_CANDIDATOS_POR_CARGO 3
-// #define MAX_ELEITORES 10
+#define MAX_CANDIDATOS_POR_CARGO 3
+#define MAX_ELEITORES 10
 
 typedef struct {
     tCandidato** presidentes;
